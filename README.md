@@ -1,28 +1,37 @@
-# CortexCall — EDA Phase (Week 1)
+# CortexCall — EEG Motor Imagery Classification
 
-## What we're doing this week
+> **Project Goal:** Classify whether a subject is imagining **LEFT** or **RIGHT** hand movement using raw EEG signals only (no physical movement).
+> **Target Audience:** Research team + assistive-technology demo.
 
-Exploring ~2000 raw EEG trial files (LEFT vs RIGHT hand imagery) to answer
-one core question: **is this data usable, and what does it look like?**
+---
 
-We are NOT cleaning or filtering the data yet. That happens next week,
-once EDA gives us real answers to base those decisions on.
+## 📅 Week 1 Focus: Exploratory Data Analysis (EDA)
 
-## Structure
-src/
-data_loader.py # shared — loads files, standardizes columns,
-# attaches labels, checks sampling rate.
-# No filtering or cleaning here.
+We are analyzing **~2,000 raw EEG trial files** (Excel/CSV) and a master labels sheet to determine signal quality, class balance, and time-frequency behavior.
 
-notebooks/
-eda_person_a.ipynb # data usability: class balance, consistency, NaNs
-eda_person_b.ipynb # raw signal plots: LEFT vs RIGHT, C3/C4
-eda_person_c.ipynb # PSD/ERD analysis: is there a real signal difference?
-eda_person_d.ipynb # artifact/outlier check: how messy is the data?
-eda_summary.md # our converged conclusions — written after all 4
-# notebooks are done, this feeds next week's config
+> ⚠️ **IMPORTANT:** **DO NOT** perform final data cleaning or filtering this week. EDA will inform the preprocessing rules, epoch windows, and band-pass frequencies implemented in Week 2.
 
+---
 
+## 📁 Repository Structure
+
+```text
+cortex-call/
+├── data/                    # Local raw & processed data (Gitignored)
+├── src/                     # Shared codebase
+│   ├── data_loader.py       # Shared loader script
+│   └── config.py            # Global pipeline configuration
+├── notebooks/               # Task-specific notebooks & summary
+│   ├── eda_person_a.ipynb   # Data usability, balance & completeness
+│   ├── eda_person_b.ipynb   # Time-domain waveform analysis (C3/C4)
+│   ├── eda_person_c.ipynb   # PSD & ERD frequency analysis
+│   ├── eda_person_d.ipynb   # Artifact & outlier distribution statistics
+│   └── eda_summary.md       # Converged conclusions & decisions
+├── models/                  # Saved weights (.pt, .pkl - Gitignored)
+├── app/                     # Streamlit web demo (Deployment stage)
+└── reports/                 # Final reports, presentation slides, figures
+
+```
 ## Rules
 
 - Everyone imports `data_loader.py` — nobody rewrites loading logic.
