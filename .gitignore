@@ -11,6 +11,7 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+data/
 downloads/
 eggs/
 .eggs/
@@ -156,6 +157,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.venv/
 
 # Spyder project settings
 .spyderproject
