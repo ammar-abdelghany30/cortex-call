@@ -11,7 +11,22 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+
+# Raw EEG dataset
+data/MI CSV/
+
 data/
+
+# Large generated datasets
+data/Processed/filtered_trials/
+data/Processed/rereferenced_trials/
+
+# Environment
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+
 downloads/
 eggs/
 .eggs/
