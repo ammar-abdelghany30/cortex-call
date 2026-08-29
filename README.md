@@ -150,10 +150,10 @@ Data Loader & Alignment          ✓
     └── 2160 EEG-label pairs
     │
     ▼
-Exploratory Data Analysis        ← CURRENT PHASE
+Exploratory Data Analysis        
     │
     ▼
-Cleaning & EEG Preprocessing
+Cleaning & EEG Preprocessing    ← CURRENT PHASE
     │
     ▼
 Feature Engineering / Modeling
